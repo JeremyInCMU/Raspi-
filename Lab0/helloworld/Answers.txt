@@ -1,3 +1,4 @@
 1. Entry point address:               0x102f4   (Deploy readelf - h);
 2. The first function branched to (name): puts@GLIBC_2.4 (2)
-3. 
+3. Left question: difference between objdump -d and objdump -D;
+ 
