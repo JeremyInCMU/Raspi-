@@ -28,8 +28,9 @@ $(targets:%=%.o) $(cobj) : %.o :
 	$(CC) -c $(CFLAGS) $(DEFINES) -o $@ $<
 	
 clean:
-	$(RM) $(cobj)
-	$(RM) $(targets:%=%.o)
+	rm -f $(cobj)
+	rm -f $(targets:%=%.o)
+	rm -f $(targets)
 
 clobber: clean
-	$(RM) $(targets)
+	rm -f $(targets)

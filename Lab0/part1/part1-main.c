@@ -9,7 +9,7 @@ extern void strTable(char *s, char *d, int sl, int dl);
 int main()
 {
    /* Assume that dst[i] is always >= 23 (decimal) */
-   char src[] = "theinitialstring";
+   char src[] = "theinitialstring\n";
    char dst[] = "PENGUINS";
    int i, srcLen, dstLen; 
    

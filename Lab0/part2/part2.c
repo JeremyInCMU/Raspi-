@@ -10,6 +10,7 @@
  *   len - number of elements in array
  * Return:
  *   The number that occurs only once
+ *   with the maximum index.
  */
 #ifdef DEFAULT
 int oddball(int *arr, int len) {
@@ -31,7 +32,6 @@ int oddball(int *arr, int len) {
 			result = arr[i];
 		}
 	}
-
 	return result;
 }
 #endif
@@ -39,7 +39,25 @@ int oddball(int *arr, int len) {
 #ifdef OPTIMIZE1
 int oddball(int *arr, int len) {
 	/* Put your code here */
-	return 0;
+	int i, j;
+        int foundInner;
+        int result = 0;
+       
+        for (i = len - 1; i >=0; i--) {
+		foundInner = 0;
+		for (j = len - 1; j >= 0; j--) {
+			if (i == j) {
+				continue;
+			}
+			if (arr[i] == arr[j]) {
+				foundInner = 1;
+			}
+		}
+		if (foundInner != 1) {
+			result = arr[i];
+		}
+        }
+	return result;
 }
 #endif
 
