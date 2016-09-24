@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
 int oddball(int *arr, int len);
 int randGenerator(int *arr, int len);
 
@@ -13,6 +12,7 @@ int randGenerator(int *arr, int len);
 
 int main()
 {
+        clock_t start, finish;
 	/* Keep this line here */
 	srand(time(NULL));
 
@@ -24,10 +24,11 @@ int main()
 	}
 
 	randGenerator(arr, ARRLEN);
+        start = clock();
 	num = oddball(arr, ARRLEN);
-
+        finish = clock();
 	printf("Oddball is %d\n", num);
-
+        printf("Execution time: %f seconds\n", (double)(finish-start)/CLOCKS_PER_SEC); 
 	return 0;
 }
 

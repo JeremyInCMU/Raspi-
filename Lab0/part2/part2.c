@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-
 /**
  * Function: oddball
  * Description: Baseline implementation for finding the number that
@@ -40,20 +39,35 @@ int oddball(int *arr, int len) {
 int oddball(int *arr, int len) {
 	/* Put your code here */
 	int i, j;
-        int foundInner;
+        int foundInner_0;
+        int foundInner_1;
+        int foundInner_2;
+        int foundInner_3;
         int result = 0;
        
         for (i = len - 1; i >=0; i--) {
-		foundInner = 0;
-		for (j = len - 1; j >= 0; j--) {
+		foundInner_0 = 0;
+                foundInner_1 = 0;
+                foundInner_2 = 0;
+                foundInner_3 = 0;
+		for (j = len - 1; j >= 0; j-=4) {
 			if (i == j) {
 				continue;
 			}
 			if (arr[i] == arr[j]) {
-				foundInner = 1;
+				foundInner_0 = 1;
 			}
+                        if (arr[i] == arr[j+1]) {
+                                foundInner_1 = 1;
+                        }
+                        if (arr[i] == arr[j+2]) {
+                                foundInner_2 = 1;
+                        }
+                        if (arr[i] == arr[j+3]) {
+                                foundInner_3 = 1;
+                        }
 		}
-		if (foundInner != 1) {
+		if (foundInner_0 == 0 && foundInner_1 == 0 && foundInner_2 == 0 && foundInner_3 == 0) {
 			result = arr[i];
 		}
         }
