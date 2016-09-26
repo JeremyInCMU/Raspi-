@@ -67,7 +67,8 @@ int oddball(int *arr, int len) {
                                 foundInner_3 = 1;
                         }
 		}
-		if (foundInner_0 == 0 && foundInner_1 == 0 && foundInner_2 == 0 && foundInner_3 == 0) {
+		if (foundInner_0 == 0 && foundInner_1 == 0 
+                    && foundInner_2 == 0 && foundInner_3 == 0) {
 			result = arr[i];
 		}
         }
