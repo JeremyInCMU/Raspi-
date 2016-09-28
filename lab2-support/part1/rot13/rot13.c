@@ -5,9 +5,9 @@
  *          Group Member 2 <email address>
  * Date:    The current time & date
  */
-
+# include "stdlib.h"
+# include "unistd.h"
+# include <bits/fileno.h>  
 int main(void) {
-	/* Needs more code. */
-
-	return -255;
+	
 }
