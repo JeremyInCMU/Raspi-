@@ -1,0 +1,2 @@
+ - IOAB address 
+ - read function will read all contents except for "\0";

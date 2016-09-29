@@ -3,10 +3,25 @@
 @ Authors: Group Member 1 <email address>
 @          Group Member 2 <email address>
 @ Date:    The current time & date
-
+#include <bits/swi.h>
 	.file	"write.S"
 	.text
 
 	.global	write
 write:
-	@ Needs more code.
+	stmfd sp!, {r1}
+        swi   WRITE_SWI
+        cmp   r0, #0
+        bge   return
+
+        mvn r0, r0
+        add r0, r0, #1
+        ldr r1, =_errno
+        str r0, [r1]
+        mvn r0, #0
+return:
+        ldmfd sp!, {r1}
+        mov   pc,  lr
+
+_errno:
+       .word errno  

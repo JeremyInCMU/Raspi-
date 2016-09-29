@@ -1,4 +1,3 @@
-PREFIX  = arm-linux-
 CC      = $(PREFIX)gcc
 OBJCOPY = $(PREFIX)objcopy
 CFLAGS  = -O2 -ffreestanding -Wall -Werror -nostdinc -I ../libc/include
